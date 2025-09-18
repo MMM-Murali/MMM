@@ -25,6 +25,16 @@ startBtn.addEventListener("click", () => {
     tableBody.innerHTML = ""; // Clear table
 });
 
+function limitInputLength(e) {
+    if (e.target.value.length > 4) {
+        e.target.value = e.target.value.slice(0, 4);
+    }
+}
+
+document.getElementById("minRange").addEventListener("input", limitInputLength);
+document.getElementById("maxRange").addEventListener("input", limitInputLength);
+
+
 function generateRandomNumber() {
     const totalPossible = max - min + 1;
 
